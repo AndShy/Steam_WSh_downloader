@@ -54,7 +54,7 @@ def modDownload(thread, modId):
             k += 1
             if not k<60:
                 saveerror('Max tryes achieved: ' + str(k), str(modId))
-                break
+                return
         try:
             r = http.request('GET', downloadurl + uuid, headers=dlheaders)
             filename = r.headers['Content-Disposition'][21:]
@@ -110,7 +110,7 @@ def prepareToDownload(url, pageNum):
             print('starting ModDownload thread : ' + str(i) + ' ModId == ' + str(modId))
         except:
             print('Error starting thread ' + str(i) + ' ModId == ' + str(modId))
-        time.sleep(4)
+        time.sleep(5)
         i+=1
 
 def GetInitialPage(url):
