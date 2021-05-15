@@ -110,7 +110,7 @@ def prepareToDownload(url, pageNum):
             print('starting ModDownload thread : ' + str(i) + ' ModId == ' + str(modId))
         except:
             print('Error starting thread ' + str(i) + ' ModId == ' + str(modId))
-        time.sleep(6)
+        time.sleep(4)
         i+=1
 
 def GetInitialPage(url):
