@@ -1,4 +1,10 @@
-import urllib3, time, re, io, sys, os, json
+import urllib3
+import time
+import re
+# import io
+# import sys
+import os
+import json
 import concurrent.futures
 import threading
 from collections import OrderedDict
@@ -142,7 +148,7 @@ def filesave(dirName, file, arg, data, s=None):
     global thrNumMax
     global lock
 
-    dn = u'\\\\?\\' + os.path.dirname(sys.argv[0])
+    dn = u'\\\\?\\' + os.path.dirname(os.path.realpath(__file__))
 
     if dirName:
         dn += '\\' + dirName
@@ -270,7 +276,6 @@ if __name__ == "__main__":
             f.close
     except:
         GetInitialPage(StartUrl)
-        links_test(StartUrl)
     else:
         lnks = [l.strip() for l in lnks if str(l).strip()]
 
